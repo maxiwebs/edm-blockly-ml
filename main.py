@@ -64,15 +64,20 @@ def dataframe_return():
     return str(list_dataframe)
 
 
-@app.route('/', methods=['POST', 'GET'])
-def root():
+#@app.route('/', methods=['POST', 'GET'])
+#def root():
     """renders undex.html
 
     Returns:
         _render: rendered html
     """
+#    return render_template('index.html')
+
+@app.route('/')
+def index():
     return render_template('index.html')
 
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=5000,debug=True)
